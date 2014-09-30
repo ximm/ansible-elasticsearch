@@ -377,6 +377,25 @@ indices.recovery.concurrent_streams: {{ elasticsearch_recovery_concurrent_stream
 {% endif %}
 
 
+
+{% if elasticsearch_fielddata_cache_size is defined %}
+indices.fielddata.cache.size: {{ elasticsearch_fielddata_cache_size }}
+{% endif %}
+
+{% if elasticsearch_breaker_fielddata_limit is defined %}
+indices.breaker.fielddata.limit: {{ elasticsearch_breaker_fielddata_limit }}
+{% endif %}
+
+{% if elasticsearch_breaker_request_limit is defined %}
+indices.breaker.request.limit: {{ elasticsearch_breaker_request_limit }}
+{% endif %}
+
+{% if elasticsearch_breaker_total_limit is defined %}
+indices.breaker.total.limit: {{ elasticsearch_breaker_total_limit }}
+{% endif %}
+
+
+
 ################################## Discovery ##################################
 
 # Discovery infrastructure ensures nodes can be found within a cluster
