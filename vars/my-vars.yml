@@ -14,13 +14,24 @@ elasticsearch_plugins:
   # - { name: 'elasticsearch/elasticsearch-mapper-attachments/2.0.0' }
   # - { name: 'com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/2.0.0' }
   - { name: 'facet-script', url: 'http://dl.bintray.com/content/imotov/elasticsearch-plugins/elasticsearch-facet-script-1.1.2.zip' }
+#   - { name: 'graphite', url: 'https://home.archive.org/~mccabe/elasticsearch-plugin-graphite-0.2-SNAPSHOT.zip' } # https://github.com/spinscale/elasticsearch-graphite-plugin
+
 elasticsearch_thread_pools:
   - "threadpool.bulk.type: fixed"
   - "threadpool.bulk.size: 50"
   - "threadpool.bulk.queue_size: 1000"
 
-
 elasticsearch_fielddata_cache_size: 5g
 elasticsearch_breaker_fielddata_limit: 6g
 elasticsearch_breaker_request_limit: 2g
 elasticsearch_breaker_total_limit: 8g
+
+# action.disable_delete_all_indices: true
+
+# metrics_graphite_host: "graphite.us.archive.org"
+
+# metrics.graphite.port: The port to connect to (default: 2003)
+# metrics.graphite.every: The interval to push data (default: 1m)
+# metrics.graphite.prefix: The metric prefix that's sent with metric names (default: elasticsearch.your_cluster_name)
+# metrics.graphite.exclude: A regular expression allowing you to exclude certain metrics (note that the node does not start if the regex does not compile)
+# metrics.graphite.include: A regular expression to explicitely include certain metrics even though they matched the exclude (note that the node does not start if the regex does not compile)

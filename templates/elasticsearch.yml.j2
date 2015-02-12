@@ -39,6 +39,14 @@ cluster.name: {{ elasticsearch_cluster_name }}
 node.name: {{ elasticsearch_node_name }}
 {% endif %}
 
+{% if elasticsearch_node_tag is defined %}
+node.tag: {{ elasticsearch_node_tag }}
+{% endif %}
+
+{% if elasticsearch_node_datacenter is defined %}
+node.datacenter: {{ elasticsearch_node_datacenter }}
+{% endif %}
+
 # Every node can be configured to allow or deny being eligible as the master,
 # and to allow or deny to store the data.
 #
@@ -560,4 +568,10 @@ action.disable_delete_all_indices: {{ elasticsearch_misc_disable_delete_all_indi
 {% for threadPoolSetting in elasticsearch_thread_pools %}
 {{ threadPoolSetting }}
 {% endfor %}
+{% endif %}
+
+############### Graphite ##################
+
+{% if metrics_graphite_host is defined %}
+metrics.graphite.host: {{ metrics_graphite_host }}
 {% endif %}
