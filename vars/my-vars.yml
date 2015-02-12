@@ -26,6 +26,12 @@ elasticsearch_breaker_fielddata_limit: 6g
 elasticsearch_breaker_request_limit: 2g
 elasticsearch_breaker_total_limit: 8g
 
+elasticsearch_discovery_zen_minimum_master_nodes: 12
+
+elasticsearch_gateway_recover_after_nodes: 11
+elasticsearch_gateway_recover_after_time: 1h
+elasticsearch_gateway_expected_nodes: 20
+
 # action.disable_delete_all_indices: true
 
 # metrics_graphite_host: "graphite.us.archive.org"
