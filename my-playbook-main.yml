@@ -1,7 +1,7 @@
 ---
 # Elasticsearch Ansible Playbook
 - hosts: all
-  user: ximm # $user
+  user: mccabe # $user
   sudo: yes
 
   vars_files:
